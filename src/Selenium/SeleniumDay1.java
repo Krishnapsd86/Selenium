@@ -1,7 +1,10 @@
 package Selenium;
 
+import java.lang.StackWalker.Option;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class SeleniumDay1 {
 
@@ -18,8 +21,15 @@ public class SeleniumDay1 {
 		//webdriver.chrome.driver-->need to value of path
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\krish\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		
-		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.google.com/");
+		ChromeOptions co = new ChromeOptions();
+		co.addArguments("--remote-allow-origins=*");
+		
+		WebDriver driver = new ChromeDriver(co);
+		driver.get("https://www.google.com");
+		System.out.println(driver.getTitle());
+		driver.quit();
+		
+	
 	    
 
 	}
