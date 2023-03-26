@@ -3,13 +3,14 @@ package Selenium;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByCssSelector;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class SeleniumDay2 {
+public class SeleniumDay3 {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		// Arrangement
@@ -20,28 +21,24 @@ public class SeleniumDay2 {
 		
 		WebDriver driver = new ChromeDriver(co);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));//hold time till 5 seconds untill element is found
-		//driver.get("https://demoqa.com/login");
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		
-		// Action 
-//		driver.manage().window().maximize();
-//		driver.findElement(By.id("userName")).sendKeys("Krishna001");
-//		driver.findElement(By.id("password")).sendKeys("Test@123");
-//		driver.findElement(By.id("login")).click();
-//		Thread.sleep(2000);
+		//Action 
 		
-		driver.findElement(By.cssSelector("input[placeholder='Username']")).sendKeys("Admin");
+		driver.findElement(By.cssSelector("input[placeholder='Username']")).sendKeys("krishna");
 		driver.findElement(By.name("password")).sendKeys("admin123");
 		driver.findElement(By.className("oxd-button")).click();
 		
 		// Assertion 
-		boolean DisplayElements = driver.findElement(By.cssSelector("div[id='app'] div div header div div span h6")).isDisplayed();
+		System.out.println(driver.findElement(By.cssSelector(".oxd-text.oxd-text--p.oxd-alert-content-text")).getText());
+		boolean DisplayElements = driver.findElement(By.cssSelector(".oxd-text.oxd-text--p.oxd-alert-content-text")).isDisplayed();
 		if (DisplayElements) {
 			System.out.println("TestCase Passed");
 		}else {
 			System.out.println("TestCase Fail");
 		}
 		driver.close();
+		
 
 	}
 
