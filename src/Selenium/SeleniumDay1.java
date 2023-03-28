@@ -19,6 +19,8 @@ public class SeleniumDay1 {
 		//webdriver.chrome.driver-->need to value of path
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\krish\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		
+		
+		//if chrome doesnot invoke (version related issues)
 		ChromeOptions co = new ChromeOptions();
 		co.addArguments("--remote-allow-origins=*");
 		

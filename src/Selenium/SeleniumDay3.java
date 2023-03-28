@@ -3,10 +3,8 @@ package Selenium;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByCssSelector;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 public class SeleniumDay3 {
 
@@ -16,10 +14,10 @@ public class SeleniumDay3 {
 		// Arrangement
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\krish\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		
-		ChromeOptions co = new ChromeOptions();
-		co.addArguments("--remote-allow-origins=*");
+//		ChromeOptions co = new ChromeOptions();
+//		co.addArguments("--remote-allow-origins=*");
 		
-		WebDriver driver = new ChromeDriver(co);
+		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));//hold time till 5 seconds untill element is found
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		
