@@ -20,7 +20,7 @@ public class ValidateLogin {
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		
 		//action
-		
+		driver.manage().window().maximize();
 		WebElement userName =  driver.findElement(By.cssSelector("input[placeholder='Username']"));
 		WebElement password = driver.findElement(By.name("password"));
 		WebElement LoginButton = driver.findElement(By.className("oxd-button"));
@@ -30,18 +30,17 @@ public class ValidateLogin {
 		
 //		Validate username/password with valid credentials
 		
-//		userName.sendKeys("Admin");
-//		password.sendKeys("admin123");
-//		LoginButton.click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.cssSelector("h6[class*='oxd']")).getText();
-//		boolean Dashboard = driver.findElement(By.cssSelector("h6[class*='oxd']")).isDisplayed();
-//		if(Dashboard) {
-//			System.out.println("Testcase passed");
-//			System.out.println("Positive Testcase");
-//		}else {
-//			System.out.println("Testcase Failed");
-//		}
+		userName.sendKeys("Admin");
+		password.sendKeys("admin123");
+		LoginButton.click();
+		Thread.sleep(2000);
+		System.out.println(driver.findElement(By.cssSelector("h6[class*='oxd']")).getText());
+		boolean Dashboard = driver.findElement(By.cssSelector("h6[class*='oxd']")).isDisplayed();
+		if(Dashboard) {
+			System.out.println("Testcase passed");
+		}else {
+			System.out.println("Testcase Failed");
+		}
 		
 		//Validate username/password with invalid credentials
 		
@@ -71,13 +70,14 @@ public class ValidateLogin {
 		
 		
 		//validate company logo
-		Thread.sleep(5000);
-		if(driver.findElement(By.cssSelector("img[alt =\"company-branding\"]")).isDisplayed()) {
-			System.out.println("Testcase pass");
-		}else {
-			System.out.println("Testcase fail");
-		}
 		
+//		Thread.sleep(5000);
+//		if(driver.findElement(By.cssSelector("img[alt =\"company-branding\"]")).isDisplayed()) {
+//			System.out.println("Testcase pass");
+//		}else {
+//			System.out.println("Testcase fail");
+//		}
+//		
 		driver.close();
 
 	}
