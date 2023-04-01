@@ -19,6 +19,14 @@ public class ValidateReset {
 		WebElement firstName =driver.findElement(By.cssSelector("input[name='first_name']"));
 		firstName.sendKeys("Krishna");
 		
+		//validate username value is present or not before doing reset
+		boolean FirstNameDisplay = driver.findElement(By.cssSelector("input[placeholder='First Name']")).isDisplayed();
+		if (FirstNameDisplay) {
+			System.out.println("Pass " + FirstNameDisplay);
+		}else {
+			System.out.println("Fail " +FirstNameDisplay);
+		}
+		
 		driver.findElement(By.cssSelector("input[type='reset']")).click();
 		boolean emptyFields = firstName.getText().isEmpty();
 		if(emptyFields) {
