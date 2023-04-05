@@ -14,6 +14,7 @@ public class ClassActivities {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+
 		
 		//Validate the title
 		if(driver.getTitle().contains("ParaBank")) {
