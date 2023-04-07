@@ -72,6 +72,7 @@ public class SeleniumDay7 {
 			System.out.println(cb.get(i).isSelected());
 			
 		}
+		driver.close();
 
 	}
 
