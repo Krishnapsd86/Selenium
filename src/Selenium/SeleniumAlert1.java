@@ -13,13 +13,17 @@ public class SeleniumAlert1 {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
-		
+
 		driver.get("https://the-internet.herokuapp.com/javascript_alerts");
-		
+
+        // Alert alert = driver.switchTo().alert();
+		// alert.accept();
+		// alert.dismiss();
+
 		driver.findElement(By.cssSelector("button[onclick='jsPrompt()']")).click();
 		driver.switchTo().alert().sendKeys("Hello Dear");
 		driver.switchTo().alert().accept();
-		String msgs =driver.findElement(By.id("result")).getText();
+		String msgs = driver.findElement(By.id("result")).getText();
 		System.out.println(msgs);
 
 	}
