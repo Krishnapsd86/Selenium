@@ -9,16 +9,22 @@ public class RSAssignment5 {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		
+
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
-		//driver.get("https://the-internet.herokuapp.com/nested_frames");
 		driver.get("https://the-internet.herokuapp.com");
 		driver.findElement(By.cssSelector("a[href='/nested_frames']")).click();
-		Thread.sleep(3000);
-		driver.switchTo().frame(driver.findElement(By.cssSelector("frame[src='/frame_middle']")));
-		System.out.println(driver.findElement(By.cssSelector("frame[src='/frame_middle']")).getText());
+		driver.switchTo().frame("frame-top");
+		driver.switchTo().frame("frame-middle");
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"content\"]")).getText());
+
+//		driver.findElement(By.linkText("Nested Frames")).click();
+//		driver.switchTo().frame("frame-top");
+//		driver.switchTo().frame("frame-middle");
+//		System.out.println(driver.findElement(By.id("content")).getText());
+
+		driver.close();
 
 	}
 
