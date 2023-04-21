@@ -36,7 +36,7 @@ public class SeleniumTables {
 		for (int i = 2; i <= rowsize; i++) {
 			String text = driver.findElement(By.xpath("//*[@id=\"t01\"]/tbody/tr[" + i + "]/td[3]")).getText();
 			System.out.println(text);
-			sum = sum + Integer.parseInt(text); // 45+94+20 // "45" ===> 45
+			sum = sum + Integer.parseInt(text); 
 
 		}
 		System.out.println(sum);
