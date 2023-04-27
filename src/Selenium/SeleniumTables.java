@@ -30,7 +30,7 @@ public class SeleniumTables {
 		// total number of columns
 		List<WebElement> cols = driver.findElements(By.xpath("//table[@id=\"t01\"]/tbody/tr[2]/td"));
 		System.out.println(cols.size());
-		int colsize = cols.size();
+		//int colsize = cols.size();
 
 		int sum = 0;
 		for (int i = 2; i <= rowsize; i++) {
