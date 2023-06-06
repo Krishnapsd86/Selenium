@@ -79,6 +79,7 @@ public class ValidateLogin {
 //		}
 //		
 		driver.close();
+		driver.quit();
 
 	}
 
